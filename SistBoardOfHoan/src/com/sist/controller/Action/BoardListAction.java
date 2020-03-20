@@ -21,8 +21,8 @@ public class BoardListAction implements Action {
 		
 		String url = "board/boardList.jsp";
 		
-		int rowsize  = 3;
-		int block = 3; // 아래에 보여질 페이지의 최대수 - 예) < [1][2][3] > < [4][5][6] >
+		int rowsize  = 5;
+		int block = 5; // 아래에 보여질 페이지의 최대수 - 예) < [1][2][3] > < [4][5][6] >
 		int totalRecord = 0;	// DB 상의 레코드 전체 수(게시물의 수) --> DB에 몇 개가 있는지 DB에서 받아와야 한다.
 		int allPage = 0;		// 전체 페이지 수	
 								//if(totalRecord%rowsize != 0) { allPage = totalRecord/rowsize+1; }
