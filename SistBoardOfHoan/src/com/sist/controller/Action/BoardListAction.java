@@ -18,15 +18,16 @@ public class BoardListAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//HttpSession session = request.getSession();
-		/*if(request.getAttribute("loginUser") == null) {
-			//response.sendRedirect("login/login2.jsp");
-			RequestDispatcher dispatcher = request.getRequestDispatcher("login/login2.jsp");
-			dispatcher.forward(request, response);
-		}*/
+		
 		
 		
 		String url = "board/boardList.jsp";
+		
+		HttpSession session = request.getSession();
+		if(session.getAttribute("loginUser") == null) {
+			url = "login/login2.jsp";
+		}
+		
 		
 		int rowsize  = 5;
 		int block = 5; // 아래에 보여질 페이지의 최대수 - 예) < [1][2][3] > < [4][5][6] >

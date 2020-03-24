@@ -25,7 +25,7 @@
 				<td colspan="3" align="center">
 					<input type="submit" value="로그인" onclick="return loginCheck()">
 					<input type="reset" value="다시작성">
-					<input type="button" value="회원가입" onclick="location.href='join.do'">
+					<input type="button" value="회원가입" onclick="location.href='BoardServlet?command=joinForm'">
 				</td>
 			</tr>
 			<%-- <br /> <br />

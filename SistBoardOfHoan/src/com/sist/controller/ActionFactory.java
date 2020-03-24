@@ -5,6 +5,8 @@ import com.sist.controller.Action.Action;
 import com.sist.controller.Action.BoardCheckPassAction;
 import com.sist.controller.Action.BoardCheckPassFormAction;
 import com.sist.controller.Action.BoardDeleteAction;
+import com.sist.controller.Action.BoardJoinFormAction;
+import com.sist.controller.Action.BoardJoinProcessAction;
 import com.sist.controller.Action.BoardListAction;
 import com.sist.controller.Action.BoardLoginAction;
 import com.sist.controller.Action.BoardLoginFormAction;
@@ -55,6 +57,13 @@ public class ActionFactory {
 			action = new BoardLoginAction();
 		} else if(command.equals("board_logout")) {
 			action = new BoardLogoutAction();
+		} else if(command.equals("joinForm")) {
+			action = new BoardJoinFormAction();
+		} else if(command.equals("board_join")) {
+			action = new BoardJoinProcessAction();
+		} else if(command.equals("board_search.do")) {
+			action = new BoardSearchAction();
+			
 		}
 		
 		return action;

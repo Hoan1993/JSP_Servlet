@@ -7,6 +7,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.sist.dao.BoardDAO;
 import com.sist.vo.BoardVO;
@@ -25,6 +26,11 @@ public class BoardViewAction implements Action{
 		bVo = bDao.selectOneBoardByNum(num);
 		
 		request.setAttribute("board", bVo);*/
+		HttpSession session = request.getSession();
+		if(session.getAttribute("loginUser") == null) {
+			url = "login/login2.jsp";
+		}
+		
 		
 		int board_no = Integer.parseInt(request.getParameter("num"));
 		//int nowPage = Integer.parseInt(request.getParameter("page"));

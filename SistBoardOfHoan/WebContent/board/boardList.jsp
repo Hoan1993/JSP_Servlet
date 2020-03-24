@@ -67,12 +67,23 @@
 					href="BoardServlet?command=board_list&page=${allPage }">▶▶</a></li>
 
 			</c:if>
-
-
 		</ul>
-
 	</div>
+		
+	<div id="wrap" align="center">	
+	<form method="post" action="<%=request.getContextPath() %>/board_search.do?page=${page}">
+			<%-- <input type="hidden" name="page" value="${page }" /> --%>
+			<select name="find_field">
+				<option value="title">글제목</option>			
+				<option value="cont">글내용</option>			
+				<option value="title_cont">제목+내용</option>			
+				<option value="writer">작성자</option>			
+			</select>
+			<input type="text" name="find_name" />
+			<input type="submit" value="검색" />
 
+		</form>
+	</div>
 
 
 </body>

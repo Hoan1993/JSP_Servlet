@@ -78,6 +78,51 @@ public class MemberDAO {
 		return mVo;
 	}
 	
+	
+	public int checkMemberId(String userId) {
+		sql = "select * from member2 where userid = ?";
+		int result = 0;
+		conn = DBManager.getConnection();
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userId);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = 1;
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt, rs);
+		}
+
+		return result;
+	}
+
+	public int insertMember(MemberVO vo) {
+		sql = "insert into member2 values(?,?,?,?,?,0)";
+		
+		conn = DBManager.getConnection();
+		int result = 0;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getName());
+			pstmt.setString(2, vo.getUserid());
+			pstmt.setString(3, vo.getPwd());
+			pstmt.setString(4, vo.getEmail());
+			pstmt.setString(5, vo.getPhone());
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt);
+		}
+	
+		return result;
+	}
+	
 
 	
 }
