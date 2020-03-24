@@ -11,6 +11,7 @@ import com.sist.controller.Action.BoardListAction;
 import com.sist.controller.Action.BoardLoginAction;
 import com.sist.controller.Action.BoardLoginFormAction;
 import com.sist.controller.Action.BoardLogoutAction;
+import com.sist.controller.Action.BoardSearchAction;
 import com.sist.controller.Action.BoardUpdateAction;
 import com.sist.controller.Action.BoardUpdateFormAction;
 import com.sist.controller.Action.BoardViewAction;
