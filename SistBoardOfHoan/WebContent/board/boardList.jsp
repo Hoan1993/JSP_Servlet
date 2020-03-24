@@ -53,7 +53,13 @@
 				<li><a href="BoardServlet?command=board_list&page=${startBlock - 1}">◀</a></li>
 			</c:if>
 			<c:forEach begin="${startBlock }" end="${endBlock }" var="i">
-				<li><a href="BoardServlet?command=board_list&page=${i }">${i }</a></li>
+				<%-- <li><a href="BoardServlet?command=board_list&page=${i }">${i }</a></li> --%>
+				<c:if test="${i == page }">
+						<li class="active"> <a href="BoardServlet?command=board_list&page=${i }">${i }</a>
+					</c:if>
+					<c:if test="${i != page }">
+						<li> <a href="BoardServlet?command=board_list&page=${i }">${i }</a>
+					</c:if>
 			</c:forEach>
 			<c:if test="${endBlock < allPage }">
 				<li><a href="BoardServlet?command=board_list&page=${endBlock + 1}">▶</a></li>

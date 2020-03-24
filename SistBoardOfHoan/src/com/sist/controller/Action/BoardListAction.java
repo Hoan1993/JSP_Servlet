@@ -18,6 +18,13 @@ public class BoardListAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//HttpSession session = request.getSession();
+		/*if(request.getAttribute("loginUser") == null) {
+			//response.sendRedirect("login/login2.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("login/login2.jsp");
+			dispatcher.forward(request, response);
+		}*/
+		
 		
 		String url = "board/boardList.jsp";
 		

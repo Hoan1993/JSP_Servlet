@@ -15,7 +15,7 @@ public class BoardLoginAction implements Action{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "member/login2.jsp";
+		String url = "BoardServlet?command=board_loginForm";
 		
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
